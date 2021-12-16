@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import random
 
 class Player():
@@ -32,10 +30,3 @@ class Player():
         s += "MAX_HP: " + str(self._max_hp) + "\n"
         s += "MAX_MP: " + str(self._max_mp)
         return s
-
-def main() -> None:
-    random.seed()
-    p: Player = Player()
-    print(p)
-
-main()
