@@ -8,3 +8,6 @@ class Monster():
 
     def roll_damage(self) -> int:
         return random.randint(self._atk - self._atk_swing, self._atk + self._atk_swing)
+
+    def is_alive(self) -> bool:
+        return self._hp > 0
