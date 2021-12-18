@@ -35,7 +35,7 @@ def player_turn(player: Player, monster: Monster) -> None:
     while True:
         command: int = query_player("Command? ")
         if command == 1:
-            damage: int = calculate_damage(player.roll_damage(), monster._def)
+            damage: int = player.roll_damage(monster._def)
             print("Dealt {} damage!".format(damage))
             monster._hp -= damage
             break
@@ -43,15 +43,9 @@ def player_turn(player: Player, monster: Monster) -> None:
             print("Invalid command!")
 
 def monster_turn(player: Player, monster: Monster) -> None:
-    damage: int = calculate_damage(monster.roll_damage(), player._def)
+    damage: int = monster.roll_damage(player._def)
     print("The monster struck you for {} damage!".format(damage))
     player._hp -= damage
-
-def calculate_damage(rolled_damage: int, defense: int) -> int:
-    damage: int = 2 * rolled_damage - defense
-    if damage <= 0:
-        damage = 1
-    return damage
 
 def main() -> None:
     random.seed()

@@ -6,5 +6,6 @@ class Monster(creature.Creature):
         super().__init__(
             atk = 15,
             deff = 30,
-            atk_swing = 5,
-            hp = 100)
+            atk_swing = 2,
+            hp = 100,
+            mp = 0)

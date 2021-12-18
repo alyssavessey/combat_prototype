@@ -15,8 +15,6 @@ class Player(creature.Creature):
     _max_hp: int = 0
     _max_mp: int = 0
 
-    _atk_swing: int = 5
-
     def __init__(self, level: int) -> None:
         self._level = level
         atk = 0
@@ -29,8 +27,9 @@ class Player(creature.Creature):
         super().__init__(
             atk = atk,
             deff = deff,
-            atk_swing = 5,
-            hp = self._max_hp)
+            atk_swing = 2,
+            hp = self._max_hp,
+            mp = 0)
 
     def __str__(self) -> str:
         s: str = ""
