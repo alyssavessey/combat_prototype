@@ -38,3 +38,11 @@ class Player(creature.Creature):
         s += "MAX_HP: " + str(self._max_hp) + "\n"
         s += "MAX_MP: " + str(self._max_mp)
         return s
+
+    def change_hp(self, delta: int) -> int:
+        self._hp += delta
+        if self._hp > self._max_hp:
+            self._hp = self._max_hp
+        elif self._hp < 0:
+            self._hp = 0
+        return self._hp
